@@ -12,6 +12,12 @@ public class Candidate {
   private String name;
   private int votes;
 
+  public Candidate() {}
+
+  public Candidate(String name) {
+    this.name = name;
+  }
+
   public Long getId() {
     return id;
   }

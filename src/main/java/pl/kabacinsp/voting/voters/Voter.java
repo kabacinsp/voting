@@ -12,6 +12,12 @@ public class Voter {
   private String name;
   private boolean isVoted;
 
+  public Voter() { }
+
+  public Voter(String name) {
+    this.name = name;
+  }
+
   public Long getId() {
     return id;
   }

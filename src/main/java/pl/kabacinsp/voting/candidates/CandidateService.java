@@ -20,7 +20,7 @@ public class CandidateService {
     return candidateRepository.save(candidate);
   }
 
-  public Candidate getCandidate(long id) {
+  public Candidate findById(long id) {
     return candidateRepository
         .findCandidateById(id)
         .orElseThrow(() -> new CandidateNotFoundException("Couldn't find candidate: " + id));
@@ -28,5 +28,9 @@ public class CandidateService {
 
   public List<Candidate> getAllCandidates() {
     return candidateRepository.findAll();
+  }
+
+  public void setVotes(long id) {
+    candidateRepository.setVotes(id);
   }
 }

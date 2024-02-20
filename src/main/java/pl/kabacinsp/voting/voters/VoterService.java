@@ -19,7 +19,7 @@ public class VoterService {
     return voterRepository.save(voter);
   }
 
-  public Voter getVoter(long id) {
+  public Voter findById(long id) {
     return voterRepository
         .findVoterById(id)
         .orElseThrow(() -> new VoterNotFoundException("Couldn't find voter: " + id));
@@ -27,5 +27,9 @@ public class VoterService {
 
   public List<Voter> getAllVoters() {
     return voterRepository.findAll();
+  }
+
+  public boolean setVoted(long id) {
+    return voterRepository.setVoted(id);
   }
 }
